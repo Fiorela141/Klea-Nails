@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klea Nails Studio – Elbasan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --blush: #F2C4CE;
+    --gold: #D4AF7A;
+    --ivory: #FAF7F4;
+    --rose: #C97B8A;
+    --mid: #1A1A1A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--ivory);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 60px;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.97) 0%, transparent 100%);
+    transition: background 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(10px);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 300; letter-spacing: 0.18em;
+    color: var(--gold); text-decoration: none; text-transform: uppercase;
+    position: relative; z-index: 201;
+  }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: var(--ivory); text-decoration: none; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-book {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold);
+    text-decoration: none; transition: background 0.25s, color 0.25s;
+  }
+  .nav-book:hover { background: var(--gold); color: var(--black); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 5px; width: 40px; height: 40px;
+    background: none; border: none; cursor: pointer;
+    position: relative; z-index: 201;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 1.5px;
+    background: var(--ivory); transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed; inset: 0; z-index: 199;
+    background: rgba(10,10,10,0.98);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 36px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300; letter-spacing: 0.06em;
+    color: var(--ivory); text-decoration: none; opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .mobile-menu a:hover { opacity: 1; color: var(--gold); }
+  .mobile-menu .mobile-book {
+    margin-top: 8px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 14px 36px; border: 1px solid var(--gold); color: var(--gold);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, #2a1520 0%, #0A0A0A 70%);
+  }
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+  .orb-1 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(242,196,206,0.18) 0%, transparent 70%);
+    top: 5%; left: -5%;
+  }
+  .orb-2 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(212,175,122,0.15) 0%, transparent 70%);
+    bottom: 10%; right: -5%;
+  }
+  .orb-3 {
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(201,123,138,0.12) 0%, transparent 70%);
+    top: 50%; left: 60%;
+  }
+  .hero-eyebrow {
+    position: relative; z-index: 1;
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.9; margin-bottom: 28px;
+  }
+  .hero-title {
+    position: relative; z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 10vw, 9rem);
+    font-weight: 300; line-height: 0.92; letter-spacing: -0.01em;
+    margin-bottom: 32px;
+  }
+  .shimmer-text {
+    background: linear-gradient(
+      120deg,
+      var(--ivory) 0%, var(--blush) 25%, var(--gold) 45%,
+      var(--ivory) 55%, var(--rose) 75%, var(--ivory) 100%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 250% center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer-text { animation: none; background-position: 45% center; }
+  }
+  .hero-sub {
+    position: relative; z-index: 1;
+    max-width: 480px; font-size: 1rem; line-height: 1.7; opacity: 0.65;
+    margin-bottom: 52px;
+  }
+  .hero-cta {
+    position: relative; z-index: 1;
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn-primary {
+    padding: 16px 42px; background: var(--gold); color: var(--black);
+    font-family: 'DM Sans', sans-serif; font-size: 0.78rem;
+    letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-ghost {
+    padding: 16px 42px; border: 1px solid rgba(250,247,244,0.3);
+    color: var(--ivory); font-size: 0.78rem; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none; transition: border-color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--ivory); }
+  .scroll-hint {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    opacity: 0.4;
+  }
+  .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--ivory), transparent);
+    animation: scrollpulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollpulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+  /* ── STRIP ── */
+  .strip {
+    border-top: 1px solid rgba(212,175,122,0.2);
+    border-bottom: 1px solid rgba(212,175,122,0.2);
+    padding: 20px 0; overflow: hidden; white-space: nowrap;
+  }
+  .strip-inner { display: inline-flex; gap: 60px; animation: marquee 18s linear infinite; }
+  .strip-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic;
+    color: var(--gold); opacity: 0.7; letter-spacing: 0.06em;
+  }
+  .strip-dot { color: var(--rose); font-style: normal; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ── SHARED ── */
+  section { padding: 110px 60px; }
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px; opacity: 0.8;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300; line-height: 1.1; margin-bottom: 24px;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .about-text p { font-size: 1.05rem; line-height: 1.85; opacity: 0.65; margin-bottom: 20px; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .stat-card {
+    background: var(--mid); padding: 40px 36px;
+    border-bottom: 2px solid transparent; transition: border-color 0.3s;
+  }
+  .stat-card:hover { border-color: var(--gold); }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 300; color: var(--blush); line-height: 1; margin-bottom: 8px;
+  }
+  .stat-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--mid); }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .service-card {
+    background: var(--black); padding: 48px 40px;
+    position: relative; overflow: hidden; transition: background 0.3s;
+  }
+  .service-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(to right, var(--rose), var(--gold));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: #111; }
+  .service-icon { font-size: 1.8rem; margin-bottom: 28px; display: block; }
+  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 14px; }
+  .service-desc { font-size: 0.88rem; line-height: 1.7; opacity: 0.55; margin-bottom: 28px; }
+  .service-price { font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold); opacity: 0.9; }
+
+  /* ── GALLERY ── */
+  .gallery-section { max-width: 1200px; margin: 0 auto; }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 200px; gap: 3px; margin-top: 60px;
+  }
+  .gallery-item { overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+  .gallery-swatch {
+    width: 100%; height: 100%; transition: transform 0.5s ease;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-item:hover .gallery-swatch { transform: scale(1.05); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 20px;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .s1 { background: linear-gradient(135deg, #1a0a10 0%, #3d1a2a 40%, #c97b8a 70%, #f2c4ce 100%); }
+  .s2 { background: linear-gradient(135deg, #0d0d0d 0%, #2a2a2a 50%, #d4af7a 100%); }
+  .s3 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #8a9bb5 100%); }
+  .s4 { background: linear-gradient(145deg, #faf7f4 0%, #f2c4ce 50%, #c97b8a 100%); }
+  .s5 { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #4a90d9 100%); }
+
+  /* ── BOOKING ── */
+  .booking-section {
+    background: linear-gradient(135deg, #1a0d12 0%, #0a0a0a 100%);
+    text-align: center;
+  }
+  .booking-inner { max-width: 680px; margin: 0 auto; }
+  .booking-inner .section-title { margin-bottom: 16px; }
+  .booking-sub { font-size: 1rem; opacity: 0.55; line-height: 1.7; margin-bottom: 52px; }
+  .booking-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { display: flex; flex-direction: column; gap: 7px; }
+  .form-field label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; }
+  .form-field input, .form-field select {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--ivory); padding: 14px 16px; font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; outline: none; transition: border-color 0.2s;
+    -webkit-appearance: none; border-radius: 0;
+  }
+  .form-field input:focus, .form-field select:focus { border-color: var(--gold); }
+  .form-field select option { background: #1a1a1a; }
+  .form-field input[type="date"] { color-scheme: dark; }
+  .form-submit {
+    margin-top: 10px; padding: 18px; background: var(--gold); color: var(--black);
+    border: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer;
+    transition: opacity 0.2s; width: 100%;
+  }
+  .form-submit:hover { opacity: 0.85; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--mid); }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+  .testi-card { background: var(--black); padding: 44px 38px; }
+  .testi-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 22px; }
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-style: italic; line-height: 1.6; opacity: 0.85; margin-bottom: 28px;
+  }
+  .testi-author { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 60px 60px 40px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px;
+    max-width: 1400px; margin: 0 auto;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; letter-spacing: 0.18em; color: var(--gold);
+    text-transform: uppercase; display: block; margin-bottom: 18px;
+  }
+  .footer-tagline { font-size: 0.85rem; opacity: 0.45; line-height: 1.7; }
+  .footer-col h4 {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 22px; opacity: 0.8;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col ul li a, .footer-col ul li {
+    font-size: 0.85rem; opacity: 0.45; text-decoration: none; color: var(--ivory);
+    transition: opacity 0.2s; line-height: 1.5;
+  }
+  .footer-col ul li a:hover { opacity: 0.9; }
+  .footer-bottom {
+    max-width: 1400px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom span { font-size: 0.72rem; opacity: 0.3; letter-spacing: 0.05em; }
+
+  /* ════ BREAKPOINTS ════ */
+  @media (max-width: 1024px) {
+    nav { padding: 22px 36px; }
+    section { padding: 90px 36px; }
+    .about { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .about-text p { font-size: 0.95rem; }
+    .stat-card { padding: 28px 22px; }
+    .stat-num { font-size: 2.6rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-card { padding: 36px 28px; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 180px 180px; }
+    .gallery-item:first-child { grid-column: span 1; grid-row: span 2; }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-card:last-child { grid-column: span 2; }
+    footer { grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 36px 30px; }
+    .footer-bottom { padding: 20px 36px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .nav-book { display: none; }
+    .nav-hamburger { display: flex; }
+    section { padding: 80px 24px; }
+    .hero { padding: 100px 24px 80px; }
+    .hero-sub { font-size: 0.95rem; max-width: 100%; }
+    .hero-cta { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-ghost { width: 100%; max-width: 280px; text-align: center; }
+    .about { grid-template-columns: 1fr; gap: 40px; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    .stat-card { padding: 28px 20px; }
+    .stat-num { font-size: 2.4rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .services-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .service-card { padding: 36px 28px; }
+    .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.gallery-item{
+    height:220px;
+}
+
+.gallery-item:first-child{
+    grid-column:span 2;
+    height:320px;
+}
+
+.gallery-item{
+    height:250px;
+}
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 1; height: 200px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testi-card:last-child { grid-column: span 1; }
+    .booking-section { padding: 70px 24px; }
+    .booking-sub { margin-bottom: 36px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr 1fr; gap: 36px; padding: 50px 24px 30px; }
+    .footer-bottom { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 18px 20px; }
+    section { padding: 64px 20px; }
+    .hero { padding: 90px 20px 70px; }
+    .hero-eyebrow { font-size: 0.65rem; margin-bottom: 20px; }
+    .hero-title { margin-bottom: 24px; }
+    .hero-sub { font-size: 0.9rem; margin-bottom: 36px; }
+    .scroll-hint { display: none; }
+    .about-stats { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .stat-card { padding: 22px 16px; }
+    .stat-num { font-size: 2rem; }
+    .stat-label { font-size: 0.68rem; }
+    .services-grid { gap: 2px; }
+    .service-card { padding: 30px 22px; }
+    .service-name { font-size: 1.3rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 130px 130px 130px; }
+    .gallery-item:first-child { grid-column: span 2; height: 160px; }
+    .testi-card { padding: 32px 24px; }
+    .booking-section { padding: 60px 20px; }
+    .booking-sub { font-size: 0.88rem; }
+    .form-field input, .form-field select { padding: 16px 14px; font-size: 1rem; }
+    .form-field label { font-size: 0.62rem; }
+    .form-submit { padding: 18px; font-size: 0.78rem; }
+    footer { grid-template-columns: 1fr; gap: 36px; padding: 48px 20px 24px; }
+    .footer-bottom { padding: 18px 20px; }
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; /* adjust if needed */
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        transparent
+    );
+}
+
+.gallery-tag {
+    color: white;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">Klea Nails</a>
+  <ul class="nav-links">
+    <li><a href="#sherbime">Shërbimet</a></li>
+    <li><a href="#galeri">Galeria</a></li>
+    <li><a href="#rreth">Studio</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#rezervo" class="nav-book">Rezervo Tani</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Hap menunë">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#sherbime" class="mobile-link">Shërbimet</a>
+  <a href="#galeri" class="mobile-link">Galeria</a>
+  <a href="#rreth" class="mobile-link">Studio</a>
+  <a href="#kontakt" class="mobile-link">Kontakt</a>
+  <a href="#rezervo" class="mobile-book mobile-link">Rezervo Tani</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <p class="hero-eyebrow">Klea Nails Studio · Elbasan</p>
+  <h1 class="hero-title">
+    <span class="shimmer-text">Krijuar për duar,<br>që meritojnë më të mirën.</span>
+  </h1>
+  <p class="hero-sub">Manikyr, pedikyr dhe nail art i realizuara me kujdes, higjienë dhe produkte cilësore për rezultate që zgjasin.</p>
+  <div class="hero-cta">
+    <a href="https://instagram.com/klea_nails_studio"
+   target="_blank"
+   class="btn-ghost">
+   Instagram
+</a>
+    <a href="#rezervo" class="btn-primary">Rezervo një Orar</a>
+    <a href="#galeri" class="btn-ghost">Shiko Galerinë</a>
+  </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="strip">
+  <div class="strip-inner" aria-hidden="true">
+    <span class="strip-item">Thonj natyral</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Zgjatim me xhel</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Thonj me tipsa</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Pedikyr</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Dual Form</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Nail Art</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Thonj natyral</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Zgjatim me xhel</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Thonj me tipsa</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Pedikyr</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Dual Form</span>
+    <span class="strip-dot">✦</span>
+  </div>
+</div>
+
+<!-- RRETH NESH -->
+<section id="rreth">
+  <div class="about">
+    <div class="about-text">
+      <p class="section-label">Studio Jonë</p>
+      <h2 class="section-title">Kujdes dhe profesionalizëm<br><em>në çdo detaj</em></h2>
+      <p>Në Klea Nails Studio fokusohemi në krijimin e një eksperience të këndshme për çdo kliente. Çdo shërbim realizohet me përkushtim dhe vëmendje ndaj detajeve.</p>
+      <p>Përdorim produkte profesionale dhe ndjekim standarde të larta higjiene për të garantuar rezultate të bukura dhe afatgjata.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Vite përvojë</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Qindra</div>
+        <div class="stat-label">Klientë të lumtur</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Dizajne Nail Art</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Produkte Profesionale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHËRBIMET -->
+<section id="sherbime" class="services-section">
+  <div class="services-inner">
+    <div class="services-header">
+      <div>
+        <p class="section-label">Çfarë Ofrojmë</p>
+        <h2 class="section-title">Shërbimet tona</h2>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">✦</span>
+        <div class="service-name">Thoi natyral</div>
+        <p class="service-desc">Aplikim xheli mbi thoin natyral, pa zgjatim me tipsa.</p>
+        <span class="service-price">Gjatësia 1-2 : 1000 lek<br>Gjatësia 3-4 : 1200 lek<br>Gjatësia 5-6 : 1400 lek </span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◆</span>
+        <div class="service-name">Zgjatim me xhel</div>
+        <p class="service-desc">Zgjatim me xhel të skulpturuara sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
+        <span class="service-price">Gjatësia 1-2 : 1400 lek<br>Gjatësia 3-4 : 1600 lek<br>Gjatësia 5-6 : 1800 lek </span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✿</span>
+        <div class="service-name">Thonj me tipsa</div>
+        <p class="service-desc">Zgjatim me tipsa sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
+        <span class="service-price">Gjatësia 1-2 : 1300 lek<br>Gjatësia 3-4 : 1500 lek<br>Gjatësia 5-6 : 1700 lek<br>Extra Long : 2200 lek </span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◈</span>
+        <div class="service-name">Dual Form</div>
+        <p class="service-desc">Teknikë moderne e zgjatimit të thonjve me forma të posaçme (Dual Forms), që siguron ndërtim të saktë, sipërfaqe të lëmuar dhe rezultat estetik me pamje natyrale.</p>
+        <span class="service-price">Nga 2500 ALL</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">❋</span>
+        <div class="service-name">Extra</div>
+        <p class="service-desc">Arte thonjsh sipas dëshirës.</p>
+        <span class="service-price">French : 200 lek<br>Ombre : 200 lek<br>Cat Eye Effect : 200 lek<br>Chrome : 200 lek<br>Piktura/Dizenjo 3D : 200-500 lek</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">◎</span>
+        <div class="service-name">Shërbime të tjera</div>
+        <p class="service-desc">Sherbime extra sipas rastit.</p>
+        <span class="service-price">Shtim një gishti : 100 lek<br>Pastrim total xheli : 300 lek<br>Cat Eye Effect : 200 lek<br>Pastrim Acrylic : 500 lek<br>Mirembajtje e thoit : 500-500 lek<br></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeri">
+  <div class="gallery-section">
+    <p class="section-label">Punimet Tona</p>
+    <h2 class="section-title">Galeria</h2>
+
+    <div class="gallery-grid">
+
+      <!-- Foto 1 -->
+      <div class="gallery-item">
+        <img src="picture1.jpg" alt="Chrome Rozë" class="gallery-image">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">White lines · Gel</span>
+        </div>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="gallery-item">
+        <img src="picture2.jpg" alt="Zi & Ar" class="gallery-image">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Zi & Ar · Akril</span>
+        </div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="gallery-item">
+        <img src="picture3.jpg" alt="Blu Natë" class="gallery-image">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Blu Natë · Extensions</span>
+        </div>
+      </div>
+
+      <!-- Foto 4 -->
+      <div class="gallery-item">
+        <img src="picture4.jpg" alt="Rozë Baleteje" class="gallery-image">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Rozë Baleteje · Arte</span>
+        </div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="gallery-item">
+        <img src="picture5.jpg" alt="Chrome Det" class="gallery-image">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Chrome Det · Folie</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KOMENTET -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <p class="section-label">Çfarë Thonë Klientet</p>
+    <h2 class="section-title">Mendimet e tyre</h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Solla një foto si inspirim dhe rezultati ishte edhe më i bukur! Klea është shumë profesionale dhe e durueshme."</p>
+        <span class="testi-author">— Arta M., Elbasan</span>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Seti im i thonjve zgjati katër javë të plota, absolutisht perfekt."</p>
+        <span class="testi-author">— Erinda K., Elbasan</span>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Atmosfera e mrekullueshme dhe thonjt e bukur që bën Klea janë arsyeja pse kthehem çdo muaj."</p>
+        <span class="testi-author">— Manjola B., Elbasan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REZERVO -->
+<section id="rezervo" class="booking-section">
+  <div class="booking-inner">
+    <p class="section-label">Rezervo Tani</p>
+    <h2 class="section-title">Rezervo një orar</h2>
+    <p class="booking-sub">Plotëso detajet e tua dhe ne do të konfirmojmë takimin brenda disa orësh. Mezi presim t'ju shohim!</p>
+    <div class="booking-form">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fname">Emri</label>
+          <input type="text" id="fname" placeholder="Arta">
+        </div>
+        <div class="form-field">
+          <label for="lname">Mbiemri</label>
+          <input type="text" id="lname" placeholder="Murati">
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="email">Adresa Email</label>
+        <input type="email" id="email" placeholder="arta@shembull.com">
+      </div>
+      <div class="form-field">
+        <label for="phone">Numri i Telefonit</label>
+        <input type="tel" id="phone" placeholder="+355 6X XXX XXXX">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="service">Shërbimi</label>
+          <select id="service">
+            <option value="">Zgjidh shërbimin</option>
+            <option>Thonj Natyral</option>
+            <option>Zgjatim me Xhel</option>
+            <option>Tipsa</option>
+            <option>Dual Form</option>
+            <option>Rimbushje</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="date">Data e Preferuar</label>
+          <input type="date" id="date">
+        </div>
+      </div>
+      <button class="form-submit" onclick="sendWhatsApp()">
+  Rezervo në WhatsApp
+</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontakt">
+  <div class="footer-brand">
+    <span class="footer-logo">Klea Nails</span>
+    <p class="footer-tagline">Studio thonjsh në Elbasan — ku arti takon precizionin në çdo detaj.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Studio</h4>
+    <ul>
+      <li><a href="#rreth">Rreth Nesh</a></li>
+      <li><a href="#sherbime">Shërbimet</a></li>
+      <li><a href="#galeri">Galeria</a></li>
+      <li><a href="#rezervo">Rezervo</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Orari</h4>
+    <ul>
+      <li>Hën – Pre: 9:00 – 19:00</li>
+      <li>E Shtunë: 10:00 – 18:00</li>
+      <li>E Diel: Mbyllur</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Kontakt</h4>
+    <ul>
+      <li><a href="mailto:info@kleanails.al">info@kleanails.al</a></li>
+      <li><a href="tel:+35569XXXXXXX">+355 69 XXX XXXX</a></li>
+      <li>Elbasan, Shqipëri</li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Klea Nails Studio · Elbasan. Të gjitha të drejtat e rezervuara.</span>
+  <span>Instagram · TikTok · Facebook</span>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  function sendWhatsApp() {
+
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+
+    let message =
+`Pershendetje Klea Nails Studio!
+
+Emri: ${fname}
+Mbiemri: ${lname}
+Telefoni: ${phone}
+Sherbimi: ${service}
+Data: ${date}
+
+Dua te rezervoj nje takim.`;
+
+    let url =
+`https://wa.me/355692680611?text=${encodeURIComponent(message)}`;
+
+    window.location.href = url;
+};
+
+</script>
+</body>
+</html>
