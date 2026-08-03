@@ -3,9 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klea Nails Studio – Elbasan</title>
+<title>Klea Nails Studio Elbasan | Thonj, Qerpikë, Vetulla & Estetikë</title>
+<meta name="description" content="Klea Nails Studio në Elbasan — studio bukurie për thonj (manikyr, zgjatim me xhel, nail art), qerpikë (volum rus, mega volum), vetulla (microblading, laminim) dhe estetikë (pastrim fytyre, dermapen). Rezervo online ose në WhatsApp.">
+<meta name="keywords" content="klea nails studio, thonj elbasan, manikyr elbasan, zgjatim thonjsh elbasan, nail art elbasan, qerpikë elbasan, volum rus qerpikë, vetulla elbasan, microblading elbasan, laminim vetullash, estetikë elbasan, pastrim fytyre elbasan, studio bukurie elbasan">
+<meta name="author" content="Klea Nails Studio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.kleanails.al/">
+<meta name="geo.region" content="AL">
+<meta name="geo.placename" content="Elbasan">
+
+<!-- Open Graph / Facebook & Instagram -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Klea Nails Studio Elbasan | Thonj, Qerpikë, Vetulla & Estetikë">
+<meta property="og:description" content="Studio bukurie e plotë në Elbasan: thonj, qerpikë, vetulla dhe estetikë, të gjitha në një vend. Rezervo takimin tënd online.">
+<meta property="og:url" content="https://www.kleanails.al/">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:site_name" content="Klea Nails Studio">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Klea Nails Studio Elbasan | Thonj, Qerpikë, Vetulla & Estetikë">
+<meta name="twitter:description" content="Studio bukurie e plotë në Elbasan: thonj, qerpikë, vetulla dhe estetikë, të gjitha në një vend.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Klea Nails Studio",
+  "image": "https://www.kleanails.al/picture1.jpg",
+  "url": "https://www.kleanails.al/",
+  "telephone": "+35569XXXXXXX",
+  "priceRange": "200 lek - 8000 lek",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Elbasan",
+    "addressCountry": "AL"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/klea_nails_studio"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Shërbimet e Klea Nails Studio",
+    "itemListElement": [
+      { "@type": "OfferCatalog", "name": "Thonj
+      { "@type": "OfferCatalog", "name": "Qerpikë" },
+      { "@type": "OfferCatalog", "name": "Vetulla" },
+      { "@type": "OfferCatalog", "name": "Estetikë" }
+    ]
+  }
+}
+</script>
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -234,53 +300,157 @@
   }
   .stat-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
 
-  /* ── SERVICES ── */
-  .services-section { background: var(--mid); }
-  .services-inner { max-width: 1200px; margin: 0 auto; }
-  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .service-card {
-    background: var(--black); padding: 48px 40px;
-    position: relative; overflow: hidden; transition: background 0.3s;
-  }
-  .service-card::before {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(to right, var(--rose), var(--gold));
-    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
-  }
-  .service-card:hover::before { transform: scaleX(1); }
-  .service-card:hover { background: #111; }
-  .service-icon { font-size: 1.8rem; margin-bottom: 28px; display: block; }
-  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 14px; }
-  .service-desc { font-size: 0.88rem; line-height: 1.7; opacity: 0.55; margin-bottom: 28px; }
-  .service-price { font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold); opacity: 0.9; }
+  /* ── SERVICE SECTIONS (shared head/index) ── */
+  .services-intro { text-align: center; padding-bottom: 60px; }
+  .services-intro-inner { max-width: 700px; margin: 0 auto; }
 
-  /* ── GALLERY ── */
+  .category-nav {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    margin-top: 44px;
+    position: sticky; top: 90px; z-index: 50;
+  }
+  .category-nav a {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ivory); text-decoration: none; opacity: 0.65;
+    padding: 10px 22px; border: 1px solid rgba(212,175,122,0.35);
+    background: rgba(10,10,10,0.6); backdrop-filter: blur(6px);
+    transition: opacity 0.2s, background 0.2s, color 0.2s;
+  }
+  .category-nav a:hover, .category-nav a.active {
+    opacity: 1; background: var(--gold); color: var(--black); border-color: var(--gold);
+  }
+
+  .service-category { border-top: 1px solid rgba(212,175,122,0.14); }
+  .service-category.tint { background: var(--mid); }
+  .service-category-inner { max-width: 1080px; margin: 0 auto; }
+  .service-category-head {
+    display: flex; align-items: flex-end; gap: 26px; margin-bottom: 16px;
+  }
+  .cat-index {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300;
+    color: var(--gold); opacity: 0.55; flex-shrink: 0; line-height: 1;
+    padding-bottom: 6px;
+  }
+  .service-category-head h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1;
+  }
+  .category-block-desc {
+    font-size: 0.95rem; opacity: 0.55; max-width: 620px; margin: 0 0 56px;
+    line-height: 1.7;
+  }
+
+  /* ── PRICE LIST (minimal, dotted-leader menu style) ── */
+  .price-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 70px;
+    row-gap: 38px;
+  }
+  .price-item { padding-bottom: 4px; }
+  .price-item-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic;
+    font-size: 1.3rem; color: var(--blush); margin-bottom: 5px;
+  }
+  .price-item-desc {
+    font-size: 0.83rem; opacity: 0.48; line-height: 1.6; margin-bottom: 14px; max-width: 460px;
+  }
+  .price-rows { display: flex; flex-direction: column; }
+  .price-row {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 8px 0; border-bottom: 1px dotted rgba(255,255,255,0.14);
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .price-label { font-size: 0.85rem; opacity: 0.65; white-space: nowrap; }
+  .price-row .price-dots {
+    flex: 1; border-bottom: 1px dotted rgba(255,255,255,0.18); position: relative; top: -4px;
+  }
+  .price-row .price-value {
+    font-size: 0.86rem; color: var(--gold); white-space: nowrap; letter-spacing: 0.02em;
+  }
+
+  /* ── GALLERY — SELF ROTATING CAROUSEL ── */
   .gallery-section { max-width: 1200px; margin: 0 auto; }
-  .gallery-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 200px 200px; gap: 3px; margin-top: 60px;
+
+  .service-carousel {
+    position: relative; margin: 60px auto 0; max-width: 1000px; overflow: hidden;
+    border: 1px solid rgba(212,175,122,0.16); background: var(--mid); padding: 35px 0;
   }
-  .gallery-item { overflow: hidden; position: relative; cursor: pointer; }
-  .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
-  .gallery-swatch {
-    width: 100%; height: 100%; transition: transform 0.5s ease;
-    display: flex; align-items: center; justify-content: center;
+
+  .carousel-viewport { overflow: hidden; width: 100%; }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.75s cubic-bezier(.22,.61,.36,1);
+    will-change: transform;
   }
-  .gallery-item:hover .gallery-swatch { transform: scale(1.05); }
-  .gallery-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 60%);
-    opacity: 0; transition: opacity 0.3s;
-    display: flex; align-items: flex-end; padding: 20px;
+
+  .carousel-slide {
+    min-width: 100%; position: relative; display: flex; justify-content: center;
+    align-items: center; overflow: hidden;
   }
-  .gallery-item:hover .gallery-overlay { opacity: 1; }
-  .gallery-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-  .s1 { background: linear-gradient(135deg, #1a0a10 0%, #3d1a2a 40%, #c97b8a 70%, #f2c4ce 100%); }
-  .s2 { background: linear-gradient(135deg, #0d0d0d 0%, #2a2a2a 50%, #d4af7a 100%); }
-  .s3 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #8a9bb5 100%); }
-  .s4 { background: linear-gradient(145deg, #faf7f4 0%, #f2c4ce 50%, #c97b8a 100%); }
-  .s5 { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #4a90d9 100%); }
+
+  .carousel-slide img {
+    width: min(100%, 430px); aspect-ratio: 4 / 5; height: auto;
+    object-fit: cover; display: block;
+  }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(10,10,10,.45);
+    color: var(--ivory);
+    font-size: 1.6rem;
+    cursor: pointer;
+    backdrop-filter: blur(7px);
+    transition: background .2s, border-color .2s;
+  }
+
+  .carousel-arrow:hover {
+    background: rgba(10,10,10,.82);
+    border-color: var(--gold);
+  }
+
+  .carousel-prev { left: 18px; }
+  .carousel-next { right: 18px; }
+
+  .carousel-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    padding: 20px 18px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    background: rgba(250,247,244,.28);
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+  }
+
+  .carousel-dot.active {
+    background: var(--gold);
+    transform: scale(1.35);
+  }
+
+  @media (max-width: 768px) {
+    .carousel-arrow { width: 42px; height: 42px; }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+  }
 
   /* ── BOOKING ── */
   .booking-section {
@@ -301,7 +471,15 @@
     -webkit-appearance: none; border-radius: 0;
   }
   .form-field input:focus, .form-field select:focus { border-color: var(--gold); }
-  .form-field select option { background: #1a1a1a; }
+  .form-field select option,
+.form-field select optgroup {
+    background: #ffffff;
+    color: #0A0A0A;
+}
+
+.form-field select {
+    color: var(--ivory);
+}
   .form-field input[type="date"] { color-scheme: dark; }
   .form-submit {
     margin-top: 10px; padding: 18px; background: var(--gold); color: var(--black);
@@ -327,7 +505,7 @@
   footer {
     padding: 60px 60px 40px;
     border-top: 1px solid rgba(255,255,255,0.07);
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 48px;
     max-width: 1400px; margin: 0 auto;
   }
   .footer-logo {
@@ -362,10 +540,7 @@
     .about-text p { font-size: 0.95rem; }
     .stat-card { padding: 28px 22px; }
     .stat-num { font-size: 2.6rem; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .service-card { padding: 36px 28px; }
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 180px 180px; }
-    .gallery-item:first-child { grid-column: span 1; grid-row: span 2; }
+    .price-list { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); column-gap: 50px; }
     .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .testi-card:last-child { grid-column: span 2; }
     footer { grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 36px 30px; }
@@ -386,28 +561,10 @@
     .about-stats { grid-template-columns: repeat(2, 1fr); }
     .stat-card { padding: 28px 20px; }
     .stat-num { font-size: 2.4rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .services-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .service-card { padding: 36px 28px; }
-    .gallery-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.gallery-item{
-    height:220px;
-}
-
-.gallery-item:first-child{
-    grid-column:span 2;
-    height:320px;
-}
-
-.gallery-item{
-    height:250px;
-}
-    .gallery-item:first-child { grid-column: span 2; grid-row: span 1; height: 200px; }
+    .category-nav { position: static; margin-top: 32px; }
+    .category-nav a { font-size: 0.68rem; padding: 9px 18px; }
+    .service-category-head { gap: 16px; }
+    .price-list { grid-template-columns: 1fr; row-gap: 32px; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .testi-card:last-child { grid-column: span 1; }
     .booking-section { padding: 70px 24px; }
@@ -429,11 +586,6 @@
     .stat-card { padding: 22px 16px; }
     .stat-num { font-size: 2rem; }
     .stat-label { font-size: 0.68rem; }
-    .services-grid { gap: 2px; }
-    .service-card { padding: 30px 22px; }
-    .service-name { font-size: 1.3rem; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 130px 130px 130px; }
-    .gallery-item:first-child { grid-column: span 2; height: 160px; }
     .testi-card { padding: 32px 24px; }
     .booking-section { padding: 60px 20px; }
     .booking-sub { font-size: 0.88rem; }
@@ -444,47 +596,85 @@
     .footer-bottom { padding: 18px 20px; }
   }
 
-  .gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @media (max-width: 768px) {
+    .service-carousel { padding: 15px; }
+    .carousel-slide img { width: min(100%, 430px); }
+  }
+  @media (max-width: 480px) {
+    .service-carousel { padding: 10px; }
+    .carousel-slide img { width: 100%; }
+  }
+
+
+  /* ── FLOATING INSTAGRAM ── */
+  .instagram-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 300;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    border: 1px solid rgba(212,175,122,0.75);
+    color: var(--gold);
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    transition: transform .25s ease, background .25s ease, color .25s ease;
+  }
+  .instagram-float:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: var(--gold);
+    color: var(--black);
+  }
+  .instagram-float svg {
+    width: 24px;
+    height: 24px;
     display: block;
-}
+  }
+  @media (max-width: 480px) {
+    .instagram-float {
+      width: 48px;
+      height: 48px;
+      right: 16px;
+      bottom: 16px;
+    }
+    .instagram-float svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px; /* adjust if needed */
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.65),
-        transparent
-    );
-}
-
-.gallery-tag {
-    color: white;
-    font-size: 0.9rem;
-}
 </style>
 </head>
 <body>
 
+<a class="instagram-float"
+   href="https://instagram.com/klea_nails_studio"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Klea Nails Studio në Instagram"
+   title="Instagram">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+    <circle cx="12" cy="12" r="4.2"></circle>
+    <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"></circle>
+  </svg>
+</a>
+
+
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Klea Nails</a>
+  <a href="#" class="nav-logo">Klea Nails Studio</a>
   <ul class="nav-links">
-    <li><a href="#sherbime">Shërbimet</a></li>
+    <li><a href="#thonje">Thonj</a></li>
+    <li><a href="#qerpike">Qerpikë</a></li>
+    <li><a href="#vetulla">Vetulla</a></li>
+    <li><a href="#estetike">Estetikë</a></li>
     <li><a href="#galeri">Galeria</a></li>
-    <li><a href="#rreth">Studio</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#rezervo" class="nav-book">Rezervo Tani</a>
@@ -495,7 +685,10 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#sherbime" class="mobile-link">Shërbimet</a>
+  <a href="#thonje" class="mobile-link">Thonj</a>
+  <a href="#qerpike" class="mobile-link">Qerpikë</a>
+  <a href="#vetulla" class="mobile-link">Vetulla</a>
+  <a href="#estetike" class="mobile-link">Estetikë</a>
   <a href="#galeri" class="mobile-link">Galeria</a>
   <a href="#rreth" class="mobile-link">Studio</a>
   <a href="#kontakt" class="mobile-link">Kontakt</a>
@@ -510,15 +703,11 @@
   <div class="orb orb-3"></div>
   <p class="hero-eyebrow">Klea Nails Studio · Elbasan</p>
   <h1 class="hero-title">
-    <span class="shimmer-text">Krijuar për duar,<br>që meritojnë më të mirën.</span>
+    <span class="shimmer-text">Krijuar për bukurinë tënde,<br>në çdo detaj.</span>
   </h1>
-  <p class="hero-sub">Manikyr, pedikyr dhe nail art i realizuara me kujdes, higjienë dhe produkte cilësore për rezultate që zgjasin.</p>
+  <p class="hero-sub">Thonj, qerpikë, vetulla dhe estetikë — të gjitha llojet e trajtimeve të bukurisë në një vend, të realizuara me kujdes, higjienë dhe produkte cilësore për rezultate që zgjasin.</p>
   <div class="hero-cta">
-    <a href="https://instagram.com/klea_nails_studio"
-   target="_blank"
-   class="btn-ghost">
-   Instagram
-</a>
+    
     <a href="#rezervo" class="btn-primary">Rezervo një Orar</a>
     <a href="#galeri" class="btn-ghost">Shiko Galerinë</a>
   </div>
@@ -528,27 +717,37 @@
 <!-- MARQUEE STRIP -->
 <div class="strip">
   <div class="strip-inner" aria-hidden="true">
-    <span class="strip-item">Thonj natyral</span>
+    <span class="strip-item">Nail Art</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Zgjatim me xhel</span>
+    <span class="strip-item">Zgjatim me Xhel</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Thonj me tipsa</span>
+    <span class="strip-item">Volum Rus</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Pedikyr</span>
+    <span class="strip-item">Laminim Vetullash</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Microblading</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Pastrim Fytyre</span>
     <span class="strip-dot">✦</span>
     <span class="strip-item">Dual Form</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Lash Lift</span>
     <span class="strip-dot">✦</span>
     <span class="strip-item">Nail Art</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Thonj natyral</span>
+    <span class="strip-item">Zgjatim me Xhel</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Zgjatim me xhel</span>
+    <span class="strip-item">Volum Rus</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Thonj me tipsa</span>
+    <span class="strip-item">Laminim Vetullash</span>
     <span class="strip-dot">✦</span>
-    <span class="strip-item">Pedikyr</span>
+    <span class="strip-item">Microblading</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Pastrim Fytyre</span>
     <span class="strip-dot">✦</span>
     <span class="strip-item">Dual Form</span>
+    <span class="strip-dot">✦</span>
+    <span class="strip-item">Lash Lift</span>
     <span class="strip-dot">✦</span>
   </div>
 </div>
@@ -558,9 +757,9 @@
   <div class="about">
     <div class="about-text">
       <p class="section-label">Studio Jonë</p>
-      <h2 class="section-title">Kujdes dhe profesionalizëm<br><em>në çdo detaj</em></h2>
-      <p>Në Klea Nails Studio fokusohemi në krijimin e një eksperience të këndshme për çdo kliente. Çdo shërbim realizohet me përkushtim dhe vëmendje ndaj detajeve.</p>
-      <p>Përdorim produkte profesionale dhe ndjekim standarde të larta higjiene për të garantuar rezultate të bukura dhe afatgjata.</p>
+      <h2 class="section-title">Të gjitha trajtimet e bukurisë<br><em>në një vend</em></h2>
+      <p>Klea Nails Studio është më shumë se një sallon thonjsh — jemi studio e plotë bukurie, ku thonjtë, qerpikët, vetullat dhe estetika kombinohen për të nxjerrë në pah më të mirën e çdo kliente.</p>
+      <p>Çdo shërbim realizohet me përkushtim, precizion dhe produkte profesionale, duke ndjekur standarde të larta higjiene për rezultate të bukura dhe afatgjata.</p>
     </div>
     <div class="about-stats">
       <div class="stat-card">
@@ -572,8 +771,8 @@
         <div class="stat-label">Klientë të lumtur</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">30+</div>
-        <div class="stat-label">Dizajne Nail Art</div>
+        <div class="stat-num">Të gjitha</div>
+        <div class="stat-label">Llojet e trajtimeve, në një vend</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">100%</div>
@@ -583,128 +782,308 @@
   </div>
 </section>
 
-<!-- SHËRBIMET -->
-<section id="sherbime" class="services-section">
-  <div class="services-inner">
-    <div class="services-header">
-      <div>
-        <p class="section-label">Çfarë Ofrojmë</p>
-        <h2 class="section-title">Shërbimet tona</h2>
-      </div>
+<!-- SHËRBIMET: INTRO + PILL NAV -->
+<section class="services-intro">
+  <div class="services-intro-inner">
+    <p class="section-label">Çmimet & Menuja e Shërbimeve</p>
+    <h2 class="section-title">Katër botë bukurie,<br>një studio</h2>
+    <p style="opacity:.6; font-size:1rem; line-height:1.7;">Çdo kategori ka hapësirën e vet më poshtë — shfleto thonjtë, qerpikët, vetullat dhe estetikën një nga një, ose shko direkt tek ajo që të intereson.</p>
+    <nav class="category-nav">
+      <a href="#thonje">Thonj</a>
+      <a href="#qerpike">Qerpikë</a>
+      <a href="#vetulla">Vetulla</a>
+      <a href="#estetike">Estetikë</a>
+    </nav>
+  </div>
+</section>
+
+<!-- THONJË -->
+<section id="thonje" class="service-category">
+  <div class="service-category-inner">
+    <div class="service-category-head">
+      <span class="cat-index">01</span>
+      <h3>Thonj</h3>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="service-icon">✦</span>
-        <div class="service-name">Thoi natyral</div>
-        <p class="service-desc">Aplikim xheli mbi thoin natyral, pa zgjatim me tipsa.</p>
-        <span class="service-price">Gjatësia 1-2 : 1000 lek<br>Gjatësia 3-4 : 1200 lek<br>Gjatësia 5-6 : 1400 lek </span>
+    <p class="category-block-desc">Manikyr, zgjatime dhe nail art të realizuara me precizion dhe higjienë të plotë.</p>
+
+    <div class="price-list">
+
+      <div class="price-item">
+        <h4 class="price-item-name">Thoi Natyral</h4>
+        <p class="price-item-desc">Aplikim xheli mbi thoin natyral, pa zgjatim me tipsa.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Gjatësia 1-2</span><span class="price-dots"></span><span class="price-value">1000 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 3-4</span><span class="price-dots"></span><span class="price-value">1200 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 5-6</span><span class="price-dots"></span><span class="price-value">1400 lek</span></div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">◆</span>
-        <div class="service-name">Zgjatim me xhel</div>
-        <p class="service-desc">Zgjatim me xhel të skulpturuara sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
-        <span class="service-price">Gjatësia 1-2 : 1400 lek<br>Gjatësia 3-4 : 1600 lek<br>Gjatësia 5-6 : 1800 lek </span>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Zgjatim me Xhel</h4>
+        <p class="price-item-desc">Zgjatim me xhel të skulpturuara sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Gjatësia 1-2</span><span class="price-dots"></span><span class="price-value">1400 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 3-4</span><span class="price-dots"></span><span class="price-value">1600 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 5-6</span><span class="price-dots"></span><span class="price-value">1800 lek</span></div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">✿</span>
-        <div class="service-name">Thonj me tipsa</div>
-        <p class="service-desc">Zgjatim me tipsa sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
-        <span class="service-price">Gjatësia 1-2 : 1300 lek<br>Gjatësia 3-4 : 1500 lek<br>Gjatësia 5-6 : 1700 lek<br>Extra Long : 2200 lek </span>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Thonj me Tipsa</h4>
+        <p class="price-item-desc">Zgjatim me tipsa sipas formës tuaj të preferuar — coffin, almond, stiletto ose katrore.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Gjatësia 1-2</span><span class="price-dots"></span><span class="price-value">1300 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 3-4</span><span class="price-dots"></span><span class="price-value">1500 lek</span></div>
+          <div class="price-row"><span class="price-label">Gjatësia 5-6</span><span class="price-dots"></span><span class="price-value">1700 lek</span></div>
+          <div class="price-row"><span class="price-label">Extra Long</span><span class="price-dots"></span><span class="price-value">2200 lek</span></div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">◈</span>
-        <div class="service-name">Dual Form</div>
-        <p class="service-desc">Teknikë moderne e zgjatimit të thonjve me forma të posaçme (Dual Forms), që siguron ndërtim të saktë, sipërfaqe të lëmuar dhe rezultat estetik me pamje natyrale.</p>
-        <span class="service-price">Nga 2500 ALL</span>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Dual Form</h4>
+        <p class="price-item-desc">Teknikë moderne e zgjatimit të thonjve me forma të posaçme (Dual Forms), që siguron ndërtim të saktë, sipërfaqe të lëmuar dhe rezultat estetik me pamje natyrale.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Të gjitha gjatësitë</span><span class="price-dots"></span><span class="price-value">Nga 2500 lek</span></div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">❋</span>
-        <div class="service-name">Extra</div>
-        <p class="service-desc">Arte thonjsh sipas dëshirës.</p>
-        <span class="service-price">French : 200 lek<br>Ombre : 200 lek<br>Cat Eye Effect : 200 lek<br>Chrome : 200 lek<br>Piktura/Dizenjo 3D : 200-500 lek</span>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Nail Art / Extra</h4>
+        <p class="price-item-desc">Arte thonjsh sipas dëshirës — nga klasik tek dizajne 3D.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">French</span><span class="price-dots"></span><span class="price-value">200 lek</span></div>
+          <div class="price-row"><span class="price-label">Ombre</span><span class="price-dots"></span><span class="price-value">200 lek</span></div>
+          <div class="price-row"><span class="price-label">Cat Eye Effect</span><span class="price-dots"></span><span class="price-value">200 lek</span></div>
+          <div class="price-row"><span class="price-label">Chrome</span><span class="price-dots"></span><span class="price-value">200 lek</span></div>
+          <div class="price-row"><span class="price-label">Piktura / Dizenjo 3D</span><span class="price-dots"></span><span class="price-value">200-500 lek</span></div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="service-icon">◎</span>
-        <div class="service-name">Shërbime të tjera</div>
-        <p class="service-desc">Sherbime extra sipas rastit.</p>
-        <span class="service-price">Shtim një gishti : 100 lek<br>Pastrim total xheli : 300 lek<br>Cat Eye Effect : 200 lek<br>Pastrim Acrylic : 500 lek<br>Mirembajtje e thoit : 500-500 lek<br></span>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Shërbime të Tjera</h4>
+        <p class="price-item-desc">Shërbime extra sipas rastit.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Shtim një gishti</span><span class="price-dots"></span><span class="price-value">100 lek</span></div>
+          <div class="price-row"><span class="price-label">Pastrim total xheli</span><span class="price-dots"></span><span class="price-value">300 lek</span></div>
+          <div class="price-row"><span class="price-label">Pastrim Acrylic</span><span class="price-dots"></span><span class="price-value">500 lek</span></div>
+          <div class="price-row"><span class="price-label">Mirëmbajtje e thoit</span><span class="price-dots"></span><span class="price-value">500 lek</span></div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- GALERIA -->
+<!-- QERPIKË -->
+<section id="qerpike" class="service-category tint">
+  <div class="service-category-inner">
+    <div class="service-category-head">
+      <span class="cat-index">02</span>
+      <h3>Qerpikë</h3>
+    </div>
+    <p class="category-block-desc">Ngjitje dhe kujdes për qerpikë, për shikim intensiv dhe natyral njëkohësisht.</p>
+
+    <div class="price-list">
+
+      <div class="price-item">
+        <h4 class="price-item-name">Llojet e Qerpikëve</h4>
+        <p class="price-item-desc">Nga një efekt i hollë e natyral deri tek vëllimi maksimal — zgjidh intensitetin që të përshtatet.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Classic Lashes</span><span class="price-dots"></span><span class="price-value">2500 lek</span></div>
+          <div class="price-row"><span class="price-label">2D Lashes</span><span class="price-dots"></span><span class="price-value">3000 lek</span></div>
+          <div class="price-row"><span class="price-label">3D Lashes</span><span class="price-dots"></span><span class="price-value">3500 lek</span></div>
+          <div class="price-row"><span class="price-label">Volume Lashes</span><span class="price-dots"></span><span class="price-value">4000 lek</span></div>
+          <div class="price-row"><span class="price-label">Mega Volume</span><span class="price-dots"></span><span class="price-value">4500 lek</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Efekte & Stile</h4>
+        <p class="price-item-desc">Stile të veçanta për një shikim të personalizuar, mbi çdo lloj bazë.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">L Curl / M Curl</span><span class="price-dots"></span><span class="price-value">4000 lek</span></div>
+          <div class="price-row"><span class="price-label">Wet Effect</span><span class="price-dots"></span><span class="price-value">4000 lek</span></div>
+          <div class="price-row"><span class="price-label">Kim K Effect</span><span class="price-dots"></span><span class="price-value">4500 lek</span></div>
+          <div class="price-row"><span class="price-label">Mascara Effect</span><span class="price-dots"></span><span class="price-value">4500 lek</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Heqje</h4>
+        <p class="price-item-desc">Heqje profesionale dhe e sigurt e qerpikëve ekzistues.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Remover</span><span class="price-dots"></span><span class="price-value">700 lek</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top:34px; font-size:0.82rem; opacity:0.5; font-style:italic;">📌 Rimbushja kryhet fiks pas 3 javësh: -1000 lek nga çmimi fillestar.</p>
+  </div>
+</section>
+
+<!-- VETULLA -->
+<section id="vetulla" class="service-category">
+  <div class="service-category-inner">
+    <div class="service-category-head">
+      <span class="cat-index">03</span>
+      <h3>Vetulla</h3>
+    </div>
+    <p class="category-block-desc">Modelim, ngjyrosje dhe teknika afatgjata për vetulla të plota e simetrike.</p>
+
+    <div class="price-list">
+
+      <div class="price-item">
+        <h4 class="price-item-name">Brow Lamination</h4>
+        <p class="price-item-desc">Vetullat "fiksohen" në pozicionin e dëshiruar për një pamje të plotë e të rregullt.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Seancë</span><span class="price-dots"></span><span class="price-value">1700 lek</span></div>
+        </div>
+      </div>
+ <div class="price-item">
+        <h4 class="price-item-name">Microblading</h4>
+        <p class="price-item-desc">Teknikë gjysmë-permanente, fije prej fije, për vetulla natyrale dhe të plota deri në 12-18 muaj.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Seanca e parë</span><span class="price-dots"></span><span class="price-value">10000 lek</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Nanoblading</h4>
+        <p class="price-item-desc">Teknikë e ngjashme me microblading, me majë edhe më të hollë për vija ultra-precize e natyrale.</p>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Seanca e parë</span><span class="price-dots"></span><span class="price-value">10000 lek</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ESTETIKË -->
+<section id="estetike" class="service-category tint">
+  <div class="service-category-inner">
+    <div class="service-category-head">
+      <span class="cat-index">04</span>
+      <h3>Estetikë</h3>
+    </div>
+    <p class="category-block-desc">Trajtime profesionale estetike për fytyrën dhe trupin, kujdes të avancuar të lëkurës, vetullave dhe relaksim.</p>
+
+    <div class="price-list">
+
+      <div class="price-item">
+        <h4 class="price-item-name">Vetulla & Qerpikë</h4>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">LVL</span><span class="price-dots"></span><span class="price-value">2000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Brow lamination</span><span class="price-dots"></span><span class="price-value">1700 ALL</span></div>
+          <div class="price-row"><span class="price-label">Halal brows</span><span class="price-dots"></span><span class="price-value">2700 ALL</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Pastrim & Hydrafacial</h4>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Pastrim i thellë</span><span class="price-dots"></span><span class="price-value">1500 ALL</span></div>
+          <div class="price-row"><span class="price-label">Pastrim i pikave dhjamore (Milia)</span><span class="price-dots"></span><span class="price-value">1800 ALL</span></div>
+          <div class="price-row"><span class="price-label">Hydrafacial</span><span class="price-dots"></span><span class="price-value">2000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Hydrafacial + LED therapy</span><span class="price-dots"></span><span class="price-value">2300 ALL</span></div>
+          <div class="price-row"><span class="price-label">Peeling profesional</span><span class="price-dots"></span><span class="price-value">3000 ALL</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Dermapen</h4>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Dermapen + Hyaluronic</span><span class="price-dots"></span><span class="price-value">6000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Dermapen + Collagen</span><span class="price-dots"></span><span class="price-value">6000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Dermapen Tri Active</span><span class="price-dots"></span><span class="price-value">7000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Dermapen Hy Cell Filler</span><span class="price-dots"></span><span class="price-value">6500 ALL</span></div>
+          <div class="price-row"><span class="price-label">Dermapen PRP</span><span class="price-dots"></span><span class="price-value">7000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Dermapen Stretch Marks</span><span class="price-dots"></span><span class="price-value">Në varësi të zonës së trupit</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">PRX</h4>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">PRX T-33</span><span class="price-dots"></span><span class="price-value">6000 ALL</span></div>
+          <div class="price-row"><span class="price-label">PRX Plus</span><span class="price-dots"></span><span class="price-value">7000 ALL</span></div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h4 class="price-item-name">Waxing & Masazh</h4>
+        <div class="price-rows">
+          <div class="price-row"><span class="price-label">Waxing total body</span><span class="price-dots"></span><span class="price-value">1800 ALL</span></div>
+          <div class="price-row"><span class="price-label">Masazh fytyre</span><span class="price-dots"></span><span class="price-value">1000 ALL</span></div>
+          <div class="price-row"><span class="price-label">Masazh total body Pregnancy Care</span><span class="price-dots"></span><span class="price-value">2500 ALL</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GALERIA — SELF ROTATING CAROUSEL -->
 <section id="galeri">
   <div class="gallery-section">
     <p class="section-label">Punimet Tona</p>
     <h2 class="section-title">Galeria</h2>
+    <p style="opacity:.55; font-size:1rem; max-width:600px; line-height:1.7;">
+      Shfleto punimet tona nga të gjitha shërbimet — thonj, qerpikë, vetulla dhe estetikë.
+    </p>
 
-    <div class="gallery-grid">
-
-      <!-- Foto 1 -->
-      <div class="gallery-item">
-        <img src="picture1.jpg" alt="Chrome Rozë" class="gallery-image">
-        <div class="gallery-overlay">
-          <span class="gallery-tag">White lines · Gel</span>
+    <div class="service-carousel" id="serviceCarousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="image5.jpeg" alt="Galeria 1" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image7.jpeg" alt="Galeria 2" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image3.jpeg" alt="Galeria 3" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image9.jpeg" alt="Galeria 4" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image1.jpeg" alt="Galeria 5" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image8.jpeg" alt="Galeria 6" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image10.jpeg" alt="Galeria 7" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image2.jpeg" alt="Galeria 8" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image4.jpeg" alt="Galeria 9" loading="lazy">
+          </div>
+          <div class="carousel-slide">
+            <img src="image6.jpeg" alt="Galeria 10" loading="lazy">
+          </div>
         </div>
       </div>
 
-      <!-- Foto 2 -->
-      <div class="gallery-item">
-        <img src="picture2.jpg" alt="Zi & Ar" class="gallery-image">
-        <div class="gallery-overlay">
-          <span class="gallery-tag">Zi & Ar · Akril</span>
-        </div>
-      </div>
+      <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Fotoja e mëparshme">‹</button>
+      <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Fotoja tjetër">›</button>
 
-      <!-- Foto 3 -->
-      <div class="gallery-item">
-        <img src="picture3.jpg" alt="Blu Natë" class="gallery-image">
-        <div class="gallery-overlay">
-          <span class="gallery-tag">Blu Natë · Extensions</span>
-        </div>
-      </div>
-
-      <!-- Foto 4 -->
-      <div class="gallery-item">
-        <img src="picture4.jpg" alt="Rozë Baleteje" class="gallery-image">
-        <div class="gallery-overlay">
-          <span class="gallery-tag">Rozë Baleteje · Arte</span>
-        </div>
-      </div>
-
-      <!-- Foto 5 -->
-      <div class="gallery-item">
-        <img src="picture5.jpg" alt="Chrome Det" class="gallery-image">
-        <div class="gallery-overlay">
-          <span class="gallery-tag">Chrome Det · Folie</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- KOMENTET -->
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <p class="section-label">Çfarë Thonë Klientet</p>
-    <h2 class="section-title">Mendimet e tyre</h2>
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Solla një foto si inspirim dhe rezultati ishte edhe më i bukur! Klea është shumë profesionale dhe e durueshme."</p>
-        <span class="testi-author">— Arta M., Elbasan</span>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Seti im i thonjve zgjati katër javë të plota, absolutisht perfekt."</p>
-        <span class="testi-author">— Erinda K., Elbasan</span>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Atmosfera e mrekullueshme dhe thonjt e bukur që bën Klea janë arsyeja pse kthehem çdo muaj."</p>
-        <span class="testi-author">— Manjola B., Elbasan</span>
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" data-slide="0" aria-label="Shko te fotoja 1"></button>
+        <button class="carousel-dot" data-slide="1" aria-label="Shko te fotoja 2"></button>
+        <button class="carousel-dot" data-slide="2" aria-label="Shko te fotoja 3"></button>
+        <button class="carousel-dot" data-slide="3" aria-label="Shko te fotoja 4"></button>
+        <button class="carousel-dot" data-slide="4" aria-label="Shko te fotoja 5"></button>
+        <button class="carousel-dot" data-slide="5" aria-label="Shko te fotoja 6"></button>
+        <button class="carousel-dot" data-slide="6" aria-label="Shko te fotoja 7"></button>
+        <button class="carousel-dot" data-slide="7" aria-label="Shko te fotoja 8"></button>
+        <button class="carousel-dot" data-slide="8" aria-label="Shko te fotoja 9"></button>
+        <button class="carousel-dot" data-slide="9" aria-label="Shko te fotoja 10"></button>
       </div>
     </div>
   </div>
@@ -728,10 +1107,6 @@
         </div>
       </div>
       <div class="form-field">
-        <label for="email">Adresa Email</label>
-        <input type="email" id="email" placeholder="arta@shembull.com">
-      </div>
-      <div class="form-field">
         <label for="phone">Numri i Telefonit</label>
         <input type="tel" id="phone" placeholder="+355 6X XXX XXXX">
       </div>
@@ -740,11 +1115,52 @@
           <label for="service">Shërbimi</label>
           <select id="service">
             <option value="">Zgjidh shërbimin</option>
-            <option>Thonj Natyral</option>
-            <option>Zgjatim me Xhel</option>
-            <option>Tipsa</option>
-            <option>Dual Form</option>
-            <option>Rimbushje</option>
+            <optgroup label="Thonj">
+              <option>Thoi Natyral</option>
+              <option>Zgjatim me Xhel</option>
+              <option>Thonj me Tipsa</option>
+              <option>Dual Form</option>
+              <option>Rimbushje</option>
+              <option>Nail Art / Extra</option>
+            </optgroup>
+            <optgroup label="Qerpikë">
+              <option>Classic Lashes</option>
+              <option>2D Lashes</option>
+              <option>3D Lashes</option>
+              <option>Volume Lashes</option>
+              <option>Mega Volume</option>
+              <option>L Curl / M Curl</option>
+              <option>Wet Effect</option>
+              <option>Kim K Effect</option>
+              <option>Mascara Effect</option>
+              <option>Remover</option>
+            </optgroup>
+            <optgroup label="Vetulla">
+              <option>Brow Lamination</option>
+              <option>Microblading</option>
+              <option>Nanoblading</option>
+            </optgroup>
+            <optgroup label="Estetikë">
+              <option>LVL</option>
+              <option>Brow lamination</option>
+              <option>Halal brows</option>
+              <option>Pastrim i thellë</option>
+              <option>Pastrim i pikave dhjamore (Milia)</option>
+              <option>Hydrafacial</option>
+              <option>Hydrafacial + LED therapy</option>
+              <option>Peeling profesional</option>
+              <option>Dermapen + Hyaluronic</option>
+              <option>Dermapen + Collagen</option>
+              <option>Dermapen Tri Active</option>
+              <option>Dermapen Hy Cell Filler</option>
+              <option>Dermapen PRP</option>
+              <option>Dermapen Stretch Marks</option>
+              <option>PRX T-33</option>
+              <option>PRX Plus</option>
+              <option>Waxing total body</option>
+              <option>Masazh fytyre</option>
+              <option>Masazh total body Pregnancy Care</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-field">
@@ -762,14 +1178,22 @@
 <!-- FOOTER -->
 <footer id="kontakt">
   <div class="footer-brand">
-    <span class="footer-logo">Klea Nails</span>
-    <p class="footer-tagline">Studio thonjsh në Elbasan — ku arti takon precizionin në çdo detaj.</p>
+    <span class="footer-logo">Klea Nails Studio</span>
+    <p class="footer-tagline">Studio bukurie në Elbasan —  thonj, qerpikë, vetulla dhe estetikë, ku arti takon precizionin në çdo detaj.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Shërbimet</h4>
+    <ul>
+      <li><a href="#thonje">Thonj</a></li>
+      <li><a href="#qerpike">Qerpikë</a></li>
+      <li><a href="#vetulla">Vetulla</a></li>
+      <li><a href="#estetike">Estetikë</a></li>
+    </ul>
   </div>
   <div class="footer-col">
     <h4>Studio</h4>
     <ul>
       <li><a href="#rreth">Rreth Nesh</a></li>
-      <li><a href="#sherbime">Shërbimet</a></li>
       <li><a href="#galeri">Galeria</a></li>
       <li><a href="#rezervo">Rezervo</a></li>
     </ul>
@@ -777,23 +1201,22 @@
   <div class="footer-col">
     <h4>Orari</h4>
     <ul>
-      <li>Hën – Pre: 9:00 – 19:00</li>
-      <li>E Shtunë: 10:00 – 18:00</li>
+      <li>Hën – Pre: 9:00 – 21:00</li>
+      <li>E Shtunë: 9:00 – 21:00</li>
       <li>E Diel: Mbyllur</li>
     </ul>
   </div>
   <div class="footer-col">
     <h4>Kontakt</h4>
     <ul>
-      <li><a href="mailto:info@kleanails.al">info@kleanails.al</a></li>
-      <li><a href="tel:+35569XXXXXXX">+355 69 XXX XXXX</a></li>
+      <li><a href="insta: klea_nails_studio">insta: klea_nails_studio</a></li>
+      <li><a href="tel:+35569XXXXXXX">+355 69 954 8180</a></li>
       <li>Elbasan, Shqipëri</li>
     </ul>
   </div>
 </footer>
 <div class="footer-bottom">
   <span>© 2026 Klea Nails Studio · Elbasan. Të gjitha të drejtat e rezervuara.</span>
-  <span>Instagram · TikTok · Facebook</span>
 </div>
 
 <script>
@@ -816,6 +1239,21 @@
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  const catSections = document.querySelectorAll('.service-category');
+  const catLinks = document.querySelectorAll('.category-nav a');
+  if (catSections.length && catLinks.length) {
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          catLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    catSections.forEach(sec => spyObserver.observe(sec));
+  }
+
   function sendWhatsApp() {
 
     let fname = document.getElementById("fname").value;
@@ -833,14 +1271,79 @@ Telefoni: ${phone}
 Sherbimi: ${service}
 Data: ${date}
 
-Dua te rezervoj nje takim.`;
+Dua të rezervoj një takim.`;
 
     let url =
 `https://wa.me/355692680611?text=${encodeURIComponent(message)}`;
 
     window.location.href = url;
 };
-
 </script>
+
+<script>
+(function () {
+  const carousel = document.getElementById('serviceCarousel');
+  const track = document.getElementById('carouselTrack');
+  const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+  const prev = document.getElementById('carouselPrev');
+  const next = document.getElementById('carouselNext');
+
+  let current = 0;
+  let timer = null;
+  const interval = 3500;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    timer = setInterval(() => showSlide(current + 1), interval);
+  }
+
+  function stopAutoPlay() {
+    if (timer) clearInterval(timer);
+  }
+
+  prev.addEventListener('click', () => {
+    showSlide(current - 1);
+    startAutoPlay();
+  });
+
+  next.addEventListener('click', () => {
+    showSlide(current + 1);
+    startAutoPlay();
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showSlide(Number(dot.dataset.slide));
+      startAutoPlay();
+    });
+  });
+
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  let touchStartX = 0;
+  carousel.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoPlay();
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 50) showSlide(current + (diff < 0 ? 1 : -1));
+    startAutoPlay();
+  }, { passive: true });
+
+  showSlide(0);
+  startAutoPlay();
+})();
+</script>
+
 </body>
 </html>
